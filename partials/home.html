@@ -1,0 +1,11 @@
+<h2>List of articles:</h2>
+
+<br>
+<div ng-repeat="article in articles">
+    <a href="#/article/{{article.id}}">
+        <h3>{{article.title}}</h3>
+    </a>
+
+    {{article.content | limitTo:100}}...
+    <hr>
+</div>
