@@ -1,5 +1,7 @@
-angular.module("CMesControllers").controller("HomeController", ['$scope', 'Article',
-    function($scope, Article) {
-        $scope.articles = Article.query();
+angular.module("CMesControllers").controller("HomeController", ['$scope', 'ArticleService',
+    function($scope, ArticleService) {
+        ArticleService.get({from: 0, to: 5}, function(articles) {
+            $scope.articles = articles;
+        });
     }
 ]);
